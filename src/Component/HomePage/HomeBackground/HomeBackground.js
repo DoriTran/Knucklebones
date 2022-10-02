@@ -41,10 +41,10 @@ const HomeBackground = () => {
                     onMouseEnter={() => setHover(3)}>How to play</Button>
             </div>
 
-            <img className="homegif-topleft" src={eyeGif} alt=""/>
-            <img className="homegif-topright" src={noeyeGif} alt=""/>
-            <img className="homegif-botleft" src={noeyeGif} alt=""/>
-            <img className="homegif-botright" src={eyeGif} alt=""/>
+            <img className="homegif-topleft corner-maxmin" src={eyeGif} alt=""/>
+            <img className="homegif-topright corner-maxmin" src={noeyeGif} alt=""/>
+            <img className="homegif-botleft corner-maxmin" src={noeyeGif} alt=""/>
+            <img className="homegif-botright corner-maxmin" src={eyeGif} alt=""/>
         </div>
  );
 }
