@@ -1,6 +1,99 @@
 .home-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vh;
+    background-color: black;
+}
+
+.home-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999;
+
+    .home-three-dices {
+        max-height: 10vh;
+        max-width: 40vh;
+    }
+
+    .button-home-spacing {
+        margin-bottom: 8vh;
+    }
+
+    .home-title {
+        line-height: 15vh;
+        font-family: Eczar;
+        font-size: 120px;
+        color: #f5ecd3;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .home-bones {
+        max-height: 10vh;
+        max-width: 10vh;        
+    }
+
+    .home-spin-bones{
+        max-height: 10vh;
+        max-width: 10vh;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .ribbon-button {
+        font-family: Eczar;
+        font-size: 1.2em;
+        margin: 0.5vh 0 0.5vh 0;
+        width: 28vh;
+        height: 6.5vh;
+        background-size: 100%;
+        text-transform: none;
+    }
+}
+
+
+
+.homegif-topleft {
     position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.homegif-topright {
+    position: fixed;
+    top: 0;
     right: 0;
+}
+
+.homegif-botleft {
+    transform: rotate(180deg);
+    position: fixed;
     bottom: 0;
-    min-height: 100%;
+    left: 0;
+}
+
+.homegif-botright {
+    transform: rotate(180deg);
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
