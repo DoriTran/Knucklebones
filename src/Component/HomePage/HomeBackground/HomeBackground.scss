@@ -1,5 +1,4 @@
-$mobile: 480px;
-$desktop: 481px;
+@import '../../Responsive.scss';
 
 .home-background {
     display: flex;
@@ -35,10 +34,6 @@ $desktop: 481px;
 
     .ribbon-button {
         font-family: Eczar;
-        font-size: 1.2rem;
-        margin: 0.5vh 0 0.5vh 0;
-        width: 28vh;
-        height: 6.5vh;
         background-size: 100%;
         text-transform: none;
     }
@@ -58,6 +53,35 @@ $desktop: 481px;
         .home-bones {
             height: 40px;
             width: 40px;      
+        }
+        .ribbon-button {
+            font-size: 1rem;
+            margin: 5px 0 5px 0;
+            width: 150px;
+            height: 34px;
+        }       
+    }
+    @media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+        .home-three-dices {
+            width: 250px;
+        }
+        .button-home-spacing {
+            margin-bottom: 20px;
+        }
+        .home-title {
+            font-family: Eczar;
+            font-size: 3.2rem;
+            line-height: 70px;
+        }    
+        .home-bones {
+            height: 45px;
+            width: 45px;      
+        }     
+        .ribbon-button {
+            font-size: 1rem;
+            margin: 5px 0 5px 0;
+            width: 150px;
+            height: 34px;
         }         
     }
     @media screen and (min-width: $desktop) {
@@ -75,7 +99,13 @@ $desktop: 481px;
         .home-bones {
             height: 80px;
             width: 80px;      
-        }   
+        }  
+        .ribbon-button {
+            font-size: 1.8rem;
+            margin: 5px 0 5px 0;
+            width: 270px;
+            height: 62px;
+        }    
     }
 
     @-webkit-keyframes spin {
@@ -93,6 +123,12 @@ $desktop: 481px;
     .corner-maxmin {
         width: 150px;
         height: 150px;
+    }    
+}
+@media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+    .corner-maxmin {
+        width: 200px;
+        height: 200px;
     }    
 }
 @media screen and (min-width: $desktop) {

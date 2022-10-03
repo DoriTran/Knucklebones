@@ -1,10 +1,10 @@
 // Resources
-import eyeGif from './Eye.gif'
-import noeyeGif from './NoEye.gif'
-import sloganGif from './Slogan.gif'
-import threeDices from './ThreeDices.png'
-import spinBones from './SpinBones.png'
-import homeButton from './HomeButton.png'
+import eyeGif from './Resources/Eye.gif'
+import noeyeGif from './Resources/NoEye.gif'
+import sloganGif from './Resources/Slogan.gif'
+import threeDices from './Resources/ThreeDices.png'
+import spinBones from './Resources/SpinBones.png'
+import homeButton from './Resources/HomeButton.png'
 
 // SCSS settings
 import "./HomeBackground.scss"
