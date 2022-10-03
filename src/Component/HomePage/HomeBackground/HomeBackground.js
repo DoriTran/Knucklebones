@@ -28,7 +28,7 @@ const HomeBackground = () => {
             <div className="home-center">
                 <img className="home-three-dices" src={threeDices} alt=''/>
                 <div className="home-title">KNUCKLEBONES</div>
-                <img className={isFirstClicked ? "home-spin-bones" : "home-bones"} src={spinBones} alt=''/>
+                <img className={isFirstClicked ? "home-spin-bones home-bones" : "home-bones"} src={spinBones} alt=''/>
                 <img className="home-three-dices button-home-spacing" src={sloganGif} alt=''/>
                 <Button className="ribbon-button" 
                     style={onHover === 1 ? hoverCSSbutton : unhoverCSSbutton} 

@@ -1,34 +1,23 @@
+$mobile: 480px;
+$desktop: 481px;
+
 .home-background {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    min-width: 100vh;
+    min-width: 100vw;
     background-color: black;
 }
 
-.home-center {
+.home-center {      
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 9999999;
-    max-width: 80%;
-
-    .home-three-dices {
-        min-width: 40%;
-        max-height: 10vh;
-        max-width: 40vh;
-    }
-
-    .button-home-spacing {
-        margin-bottom: 8vh;
-    }
 
     .home-title {
-        line-height: 15vh;
-        font-family: Eczar;
-        font-size: 8vw;
         color: #f5ecd3;
 
         -webkit-touch-callout: none;
@@ -39,16 +28,54 @@
         user-select: none;
     }
 
-    .home-bones {
-        max-height: 10vh;
-        max-width: 10vh;        
-    }
-
-    .home-spin-bones{
-        max-height: 10vh;
-        max-width: 10vh;
+    .home-spin-bones {
         -webkit-animation: spin 2s linear infinite;
         animation: spin 2s linear infinite;
+    }
+
+    .ribbon-button {
+        font-family: Eczar;
+        font-size: 1.2rem;
+        margin: 0.5vh 0 0.5vh 0;
+        width: 28vh;
+        height: 6.5vh;
+        background-size: 100%;
+        text-transform: none;
+    }
+    
+    @media screen and (max-width: $mobile) {
+        .home-three-dices {
+            width: 200px;
+        }
+        .button-home-spacing {
+            margin-bottom: 10px;
+        }
+        .home-title {
+            font-family: Eczar;
+            font-size: 2.5rem;
+            line-height: 50px;
+        }    
+        .home-bones {
+            height: 40px;
+            width: 40px;      
+        }         
+    }
+    @media screen and (min-width: $desktop) {
+        .home-three-dices {
+            width: 350px;
+        }
+        .button-home-spacing {
+            margin-bottom: 40px;
+        }
+        .home-title {
+            font-family: Eczar;
+            font-size: 8rem;
+            line-height: 150px;
+        } 
+        .home-bones {
+            height: 80px;
+            width: 80px;      
+        }   
     }
 
     @-webkit-keyframes spin {
@@ -60,23 +87,19 @@
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
-
-    .ribbon-button {
-        font-family: Eczar;
-        font-size: 1.5vw;
-        margin: 0.5vh 0 0.5vh 0;
-        width: 28vh;
-        height: 6.5vh;
-        background-size: 100%;
-        text-transform: none;
-    }
 }
 
-.corner-maxmin {
-    min-width: 25%;
-    min-height: 25%;
-    max-width: 35%;
-    max-height: 35%;
+@media screen and (max-width: $mobile) {
+    .corner-maxmin {
+        width: 150px;
+        height: 150px;
+    }    
+}
+@media screen and (min-width: $desktop) {
+    .corner-maxmin {
+        width: 250px;
+        height: 250px;       
+    }       
 }
 
 .homegif-topleft {
