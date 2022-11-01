@@ -1,0 +1,52 @@
+.option-square {
+    z-index: 10000000;
+    width: 350px;
+    height: 350px;
+    background-size: cover;
+    opacity: 1 !important;
+    border-radius: 25px;
+    color: white !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    transition: 0.3s;
+
+    font-family: Eczar;
+
+    .option-square-title {
+        transition: 0.3s;
+        font-size: 40px;
+    }
+
+    .option-square-subtitle {
+
+    }
+
+    .option-square-description {
+
+    }
+}
+
+.option-square:hover {
+    transition: 0.3s;
+    width: 400px;
+    height: 400px;
+    box-shadow: 0px 0px 5px 5px rgb(194, 240, 255);
+    
+
+    .option-square-title {
+        transition: 0.3s;
+        font-size: 50px;
+    }
+
+    .option-square-subtitle {
+
+    }
+
+    .option-square-description {
+
+    }
+}

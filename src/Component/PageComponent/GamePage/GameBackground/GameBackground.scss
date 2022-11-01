@@ -1,0 +1,51 @@
+.game-background-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.top-eyes-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 30vh;
+}
+
+.bot-eyes-gif {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    height: 30vh;
+}
+
+.left-game-background-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+
+    width: 34vw;
+    height: 100vh;
+
+    .left-fire-gamebackground {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+    }
+}
+
+.right-game-background-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: black;
+
+    width: 34vw;
+    height: 100vh;
+    .right-fire-gamebackground {
+        height: 100vh;
+        transform: rotate(180deg);
+    }
+}

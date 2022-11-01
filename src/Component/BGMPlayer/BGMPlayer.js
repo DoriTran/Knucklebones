@@ -1,11 +1,33 @@
-// Resources
-import Knucklebones_mp3 from "./Knucklebones.mp3"
+// BGM resources
+import Home from './BGM/Home.mp3'
+import FindRoom from './BGM/FindRoom.mp3'
+import HowToPlay from './BGM/HowToPlay.mp3'
+import Knucklebones from './BGM/Knucklebones.mp3'
+
+// BGM Context
+import { BackgroundMusicContext } from "../../App"
 
 // React
-import { useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useContext } from "react"
 
-const BMGPlayer = () => {
+const BMGPlayer = (props) => {
+    // Context
+    const BGMContext = useContext(BackgroundMusicContext)
+
+    // Background Music Status
     const audioRef = useRef(null)
+    const [audio, setAudio]  = useState(null)
+    
+    useEffect(() => {
+        console.log(BGMContext.BGM)
+        switch(BGMContext.BGM) {
+            case "Home": setAudio(Knucklebones); break;
+            case "FindRoom": setAudio(FindRoom); break;
+            case "HowToPlay": setAudio(HowToPlay); break;
+            case "Knucklebones": setAudio(Knucklebones); break;
+            default: setAudio(null); break;
+        }
+    }, [BGMContext.BGM]);
 
     useEffect(() => {
         function handleClickOutside(event) {
@@ -21,9 +43,15 @@ const BMGPlayer = () => {
         };
     }, [audioRef]);
 
+    useEffect(() => {
+        audioRef.current.pause()
+        audioRef.current.load()
+        audioRef.current.play()
+    }, [audio]);
+
     return (             
     <audio ref={audioRef} loop>
-        <source src={Knucklebones_mp3} type="audio/mp3" />
+        <source src={audio} type="audio/mp3" />
         Your browser does not support the audio element.
     </audio> );
 }

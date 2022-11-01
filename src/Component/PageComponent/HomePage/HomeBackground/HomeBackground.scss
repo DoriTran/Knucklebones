@@ -1,0 +1,168 @@
+@import '../../../Responsive.scss';
+
+.home-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: black;
+}
+
+.home-center {      
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    .home-title {
+        color: #f5ecd3;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .home-bones {
+        z-index: 3;
+    }  
+    .home-spin-bones {
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+    }
+
+    .ribbon-button {
+        font-family: Eczar;
+        background-size: 100%;
+        text-transform: none;
+    }
+    
+    @media screen and (max-width: $mobile) {
+        .home-three-dices {
+            width: 200px;
+        }
+        .button-home-spacing {
+            margin-bottom: 10px;
+        }
+        .home-title {
+            font-family: Eczar;
+            font-size: 2.5rem;
+            line-height: 50px;
+        }    
+        .home-bones {
+            height: 40px;
+            width: 40px;      
+        }
+        .ribbon-button {
+            font-size: 1rem;
+            margin: 5px 0 5px 0;
+            width: 150px;
+            height: 34px;
+        }       
+    }
+    @media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+        .home-three-dices {
+            width: 250px;
+        }
+        .button-home-spacing {
+            margin-bottom: 20px;
+        }
+        .home-title {
+            font-family: Eczar;
+            font-size: 3.2rem;
+            line-height: 70px;
+        }    
+        .home-bones {
+            height: 45px;
+            width: 45px;      
+        }     
+        .ribbon-button {
+            font-size: 1rem;
+            margin: 5px 0 5px 0;
+            width: 150px;
+            height: 34px;
+        }         
+    }
+    @media screen and (min-width: $desktop) {
+        .home-three-dices {
+            width: 350px;
+        }
+        .button-home-spacing {
+            margin-bottom: 40px;
+        }
+        .home-title {
+            font-family: Eczar;
+            font-size: 8rem;
+            line-height: 150px;
+        } 
+        .home-bones {
+            height: 80px;
+            width: 80px;      
+        }  
+        .ribbon-button {
+            font-size: 1.8rem;
+            margin: 5px 0 5px 0;
+            width: 270px;
+            height: 62px;
+        }    
+    }
+
+    @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .corner-maxmin {
+        width: 150px;
+        height: 150px;
+    }    
+}
+@media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+    .corner-maxmin {
+        width: 200px;
+        height: 200px;
+    }    
+}
+@media screen and (min-width: $desktop) {
+    .corner-maxmin {
+        width: 250px;
+        height: 250px;       
+    }       
+}
+
+.homegif-topleft {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.homegif-topright {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.homegif-botleft {
+    transform: rotate(180deg);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.homegif-botright {
+    transform: rotate(180deg);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
