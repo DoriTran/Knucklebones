@@ -1,0 +1,34 @@
+import { Animate } from "react-move";
+import { easeExpOut } from "d3-ease";
+import { cloneElement } from 'react';
+
+import usePrevAnimation from "../usePrevAnimation";
+
+const MoveAnimation = (props) => {
+    return ( 
+        <Animate
+            show={props.show}
+            start={props.position}
+            update={{
+                x: [props.position.x],
+                y: [props.position.y],
+                timing: { 
+                    duration: props.duration, 
+                    ease: props.ease === undefined ? easeExpOut : props.ease 
+                }
+            }}
+        >
+            {(data) => {
+                return cloneElement(props.children, {
+                    style: {
+                        position: "fixed",
+                        WebkitTransform: ` translate3d(${data.x}px, ${data.y}px, 0)`,
+                        transform: ` translate3d(${data.x}px, ${data.y}px, 0)`,
+                    }
+                })
+            }}
+        </Animate>
+    );
+}
+ 
+export default MoveAnimation;

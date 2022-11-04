@@ -1,5 +1,4 @@
 // BGM resources
-import Home from './BGM/Home.mp3'
 import FindRoom from './BGM/FindRoom.mp3'
 import HowToPlay from './BGM/HowToPlay.mp3'
 import Knucklebones from './BGM/Knucklebones.mp3'
@@ -19,7 +18,6 @@ const BMGPlayer = (props) => {
     const [audio, setAudio]  = useState(null)
     
     useEffect(() => {
-        console.log(BGMContext.BGM)
         switch(BGMContext.BGM) {
             case "Home": setAudio(Knucklebones); break;
             case "FindRoom": setAudio(FindRoom); break;
@@ -44,6 +42,7 @@ const BMGPlayer = (props) => {
     }, [audioRef]);
 
     useEffect(() => {
+        if (audio === null) return;
         audioRef.current.pause()
         audioRef.current.load()
         audioRef.current.play()

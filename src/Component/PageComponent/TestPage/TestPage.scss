@@ -5,23 +5,75 @@
     justify-content: center;
     align-items: center;
 
-    gap: 25px;
-
-    width: 500px;
+    width: 100vw;
     height: 100vh;
 
-    border: 1px solid black;
     background-color: aliceblue;
-    border-radius: 25px;
-
-    padding: 50px;
 }
 
-.test-class-wrapper {
-    border-radius: 4;
-    background-color: rgba(255, 255, 255, 0.7);
-    position: relative;
-    margin: 5px 3px 10px;
-    width: 250;
-    height: 50;
+.test-wrapper {
+    border: 1px solid black;
+    background-color: rgb(252, 240, 255);
+    margin-top: 100px;
+    width: 600px;
+    height: 400px;
+}
+
+.test-element {
+    position: fixed;
+    background-color: yellow;
+    width: 50px;
+    height: 50px;
+    z-index: 5;
+    border: 1px solid black;
+    font-size: 30px;
+    color: black;
+    text-align: center;
+}
+
+.e-1 {
+    transform: translate3d(50vw, 0 ,0);
+}
+
+//
+
+.control-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+}
+
+.control-btn {
+    height: 50px;
+}
+
+.data-container {
+    left: 10px;
+    top: 10px;
+
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    z-index: 999;
+    text-align: center;
+
+    background-color: pink;
+    border-radius: 25px;
 }
