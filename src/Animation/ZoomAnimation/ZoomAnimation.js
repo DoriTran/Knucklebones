@@ -16,12 +16,11 @@ const ZoomAnimation = (props) => {
             }}
         >
             {(data) => {
-                return cloneElement(props.children, {
-                    style: { 
-                        WebkitTransform: `scale(${data.scale})`,
-                        transform: `scale(${data.scale})`
-                    }
-                })
+                return <div style={{
+                    position: "fixed",
+                    WebkitTransform: `scale(${data.scale})`,
+                    transform: `scale(${data.scale})`
+                }}>{props.children}</div>
             }}
         </Animate>
     );

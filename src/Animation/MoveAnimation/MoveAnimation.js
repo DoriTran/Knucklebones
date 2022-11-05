@@ -19,13 +19,11 @@ const MoveAnimation = (props) => {
             }}
         >
             {(data) => {
-                return cloneElement(props.children, {
-                    style: {
-                        position: "fixed",
-                        WebkitTransform: ` translate3d(${data.x}px, ${data.y}px, 0)`,
-                        transform: ` translate3d(${data.x}px, ${data.y}px, 0)`,
-                    }
-                })
+                return <div style={{
+                            position: "fixed",
+                            WebkitTransform: ` translate3d(${data.x}px, ${data.y}px, 0)`,
+                            transform: ` translate3d(${data.x}px, ${data.y}px, 0)`,
+                        }}>{props.children}</div>
             }}
         </Animate>
     );

@@ -158,11 +158,11 @@ const TestPage = () => {
 
       <div className="test-container">
         <div className="test-wrapper">
-          {/* <MoveAnimation position={position} duration={1000}> */}
-            <ZoomAnimation scale={scale} duration={1000}>
-              <div className="test-element"></div>
-            </ZoomAnimation>
-          {/* </MoveAnimation> */}
+          <MoveAnimation position={position} duration={5000}>
+              <ZoomAnimation scale={scale} duration={1000}>
+                <div className="test-element"></div>
+              </ZoomAnimation>              
+          </MoveAnimation>
         </div>
       </div>
     </>
