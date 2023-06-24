@@ -1,12 +1,12 @@
 import Phaser from "phaser";
 import { useEffect, useRef } from "react";
-
 import ImageURILoaderPlugin from "phaser3-rex-plugins/plugins/imageuriloader-plugin";
+import BootScene from "./scenes/Boot.scene";
 
 const config = {
   type: Phaser.AUTO,
-  parent: "test",
-  backgroundColor: "#F8E8EE",
+  parent: "home",
+  backgroundColor: "#000",
   scale: {
     mode: Phaser.Scale.ScaleModes.RESIZE,
     width: window.innerWidth,
@@ -28,7 +28,7 @@ const config = {
       },
     ],
   },
-  scene: [],
+  scene: [BootScene],
 };
 
 const usePhaser = () => {

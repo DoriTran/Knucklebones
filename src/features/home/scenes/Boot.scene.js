@@ -1,5 +1,7 @@
 import Phaser from "phaser";
 import rawUrl from "utils/rawUrl";
+import ProgressText from "../text/Progress.text";
+import ProgressBar from "../object/ProgressBar.object";
 
 class BootScene extends Phaser.Scene {
   constructor() {
@@ -7,6 +9,27 @@ class BootScene extends Phaser.Scene {
   }
 
   preload() {
+    // Update & display the loading progress
+    this.progressText = new ProgressText(
+      this,
+      this.cameras.main.width / 2,
+      this.cameras.main.height / 2 - 35
+    );
+    this.progressBar = new ProgressBar(
+      this,
+      this.cameras.main.width / 2,
+      this.cameras.main.height / 2 + 35,
+      400,
+      30,
+      5,
+      0xffffff,
+      0xff0302
+    );
+    this.load.on("progress", (value) => {
+      this.progressText.update(value);
+      this.progressBar.updateProgress(value);
+    });
+
     // Background music
     this.load.audio("audio.how-to-play", rawUrl("sounds/bg_music/how-to-play.mp3"));
     this.load.audio("audio.knucklebones", rawUrl("sounds/bg_music/knucklebones.mp3"));
@@ -69,23 +92,10 @@ class BootScene extends Phaser.Scene {
   }
 
   create() {
-    // Display the loading progress text
-    this.loadingText = this.add.text(
-      this.cameras.main.width / 2,
-      this.cameras.main.height / 2,
-      "Loading...",
-      { font: "32px Arial", fill: "#ffffff" }
-    );
-    this.loadingText.setOrigin(0.5);
-
-    // Update the loading progress
-    this.load.on("progress", (value) => {
-      this.loadingText.setText(`Loading: ${Math.round(value * 100)}%`);
-    });
-
     // When all assets are loaded, start the next scene
     this.load.on("complete", () => {
-      this.scene.start("NextScene");
+      this.progressText.complete();
+      // this.scene.start("Home");
     });
 
     // Start loading the assets
