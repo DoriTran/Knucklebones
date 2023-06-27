@@ -13,9 +13,6 @@ const HomeBtnWrapper = () => {
       <RibbonButton to="/how-to-play" hoverId={2} hover={wasHovering} setHover={setWasHovering}>
         How To Play
       </RibbonButton>
-      <RibbonButton to="/test" hoverId={3} hover={wasHovering} setHover={setWasHovering}>
-        Test
-      </RibbonButton>
     </ReactContainer>
   );
 };

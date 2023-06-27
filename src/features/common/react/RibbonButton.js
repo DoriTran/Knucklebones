@@ -53,7 +53,6 @@ const RibbonButton = ({ to, children, hoverId, hover, setHover }) => {
   };
   const onClick = () => {
     playEntering();
-    console.log("Yo");
     navigate(to);
   };
 
