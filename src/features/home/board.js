@@ -5,7 +5,7 @@ import HomeButton from "./react/HomeButton";
 
 const Home = () => {
   return (
-    <ReactContainer fullScreen gap={0} style={{ backgroundColor: "black" }}>
+    <ReactContainer fullScreen gap="1vh" style={{ backgroundColor: "black" }}>
       <CornerObject corner="top-left" />
       <CornerObject corner="top-right" />
       <CornerObject corner="bot-left" />
