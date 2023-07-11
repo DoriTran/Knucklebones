@@ -31,25 +31,16 @@ class BootScene extends Phaser.Scene {
     });
 
     // Background music
-    this.load.audio("audio.how-to-play", rawUrl("sounds/bg_music/how-to-play.mp3"));
-    this.load.audio("audio.knucklebones", rawUrl("sounds/bg_music/knucklebones.mp3"));
+    this.load.audio("knucklebones", rawUrl("sounds/bg_music/knucklebones.mp3"));
 
     // Common
-    this.load.image("image.button", rawUrl("images/common/button.png"));
+    this.load.image("button", rawUrl("images/common/button.png"));
 
-    // Home
-    this.load.image("image.bot-right", rawUrl("images/home/bot-right.gif"));
-    this.load.image("image.top-left", rawUrl("images/home/top-left.gif"));
-    this.load.image("image.fire-corner", rawUrl("images/home/fire-corner.gif"));
-
-    this.load.image("image.dice-title", rawUrl("images/home/dice-title.png"));
-    this.load.image("image.title", rawUrl("images/home/title.gif"));
-    this.load.image("image.bone", rawUrl("images/home/bone.png"));
-    this.load.image("image.description", rawUrl("images/home/description.gif"));
-
-    // How to play
-    this.load.image("image.how-to-play-title", rawUrl("images/how-to-play/how-to-play-title.png"));
-    this.load.image("image.how-to-play", rawUrl("images/how-to-play/how-to-play.png"));
+    // Game
+    this.load.spritesheet("dice", "path/to/dice_spritesheet.png", {
+      frameWidth: 100,
+      frameHeight: 100,
+    });
   }
 
   create() {
