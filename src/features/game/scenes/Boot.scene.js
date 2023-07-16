@@ -1,7 +1,7 @@
 import Phaser from "phaser";
 import { rawUrl, camera } from "utils";
 import ProgressText from "../text/Progress.text";
-import ProgressBar from "../object/common/ProgressBar.object";
+import ProgressBar from "../object/boot/ProgressBar.object";
 
 class BootScene extends Phaser.Scene {
   constructor() {

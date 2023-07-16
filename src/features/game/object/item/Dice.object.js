@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import Holder from "./Holder.object";
+import Holder from "../Holder.object";
 
 class Dice extends Phaser.GameObjects.Sprite {
   constructor(scene, player) {
@@ -27,11 +27,11 @@ class Dice extends Phaser.GameObjects.Sprite {
     this.scene.sound.play("sound.dice");
 
     // Start rolling animation
-    this.rollTimer = this.scene.time.delayedCall(this.rollTime, this.moveAndChangeFace, [], this);
+    this.rollTimer = this.scene.time.delayedCall(this.rollTime, this.movingRoll, [], this);
     this.isRolling = true;
   }
 
-  moveAndChangeFace() {
+  movingRoll() {
     // Randomly select an ending point within the holder rect
     const end = Holder.getRandomPointInHolder(this.scene, this.player, 50);
 
@@ -63,6 +63,36 @@ class Dice extends Phaser.GameObjects.Sprite {
 
     // Update face value and set frame to the selected face
     this.setFrame(randomFace);
+  }
+
+  moveTo(verticalPosition) {
+    const duration = 500; // Duration in milliseconds for the movement
+
+    this.scene.tweens.add({
+      targets: this,
+      y: verticalPosition,
+      duration,
+      ease: Phaser.Math.Easing.Linear,
+    });
+  }
+
+  destroy() {
+    const shatterSoundKey = "sound.shatter";
+    const shrinkDuration = 500; // Duration in milliseconds for the shrinking animation
+
+    this.scene.sound.play(shatterSoundKey);
+
+    this.scene.tweens.add({
+      targets: this,
+      scaleX: 0,
+      scaleY: 0,
+      duration: shrinkDuration,
+      ease: Phaser.Math.Easing.Linear,
+      onComplete: () => {
+        this.scene.tweens.killTweensOf(this);
+        this.destroy();
+      },
+    });
   }
 }
 

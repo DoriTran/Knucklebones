@@ -1,3 +1,5 @@
+import "./App.css";
+
 import { Home, HowToPlay } from "features";
 import { BrowserRouter, Route, Routes, Navigate, useLocation } from "react-router-dom";
 import { PageTransition } from "@steveeeie/react-page-transition";

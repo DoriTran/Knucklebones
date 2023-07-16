@@ -1,4 +1,4 @@
-export { default as ProgressBar } from "./common/ProgressBar.object";
+export { default as ProgressBar } from "./boot/ProgressBar.object";
 
 export { default as FireCorner } from "./corner/FireCorner.object";
 export { default as FireEyeBotRight } from "./corner/FireEyeBotRight.object";
