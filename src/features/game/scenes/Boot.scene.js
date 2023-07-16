@@ -42,7 +42,7 @@ class BootScene extends Phaser.Scene {
       frameHeight: 100,
     });
 
-    this.load.image("image.cell", rawUrl("images/game/board/cell.pmg"));
+    this.load.image("image.cell", rawUrl("images/game/board/cell.png"));
     this.load.image("image.fit-col", rawUrl("images/game/board/fit-col.png"));
     this.load.image("image.full-col", rawUrl("images/game/board/full-col.png"));
 
@@ -55,7 +55,7 @@ class BootScene extends Phaser.Scene {
       frameHeight: 250,
     });
 
-    this.load.image("image.pre-name", rawUrl("image/game/other/pre-name.png"));
+    this.load.image("image.pre-name", rawUrl("images/game/other/pre-name.png"));
 
     // Game sounds
     this.load.audio("sound.choose", rawUrl("sounds/game/choose.mp3"));

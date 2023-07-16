@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { Home, HowToPlay } from "features";
+import { Home, HowToPlay, Game } from "features";
 import { BrowserRouter, Route, Routes, Navigate, useLocation } from "react-router-dom";
 import { PageTransition } from "@steveeeie/react-page-transition";
 
@@ -21,6 +21,7 @@ function AppRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/how-to-play" element={<HowToPlay />} />
+        <Route path="/game" element={<Game />} />
         <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
     </PageTransition>

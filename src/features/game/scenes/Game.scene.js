@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import Board from "./Board.object";
+import Board from "../object/board/Board.object";
 
 class GameScene extends Phaser.Scene {
   constructor() {

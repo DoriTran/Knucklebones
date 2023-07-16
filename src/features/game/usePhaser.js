@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 import { useEffect, useRef } from "react";
-import { BootScene } from "./scenes";
+import BootScene from "./scenes/Boot.scene";
+import GameScene from "./scenes/Game.scene";
 
 const config = {
   type: Phaser.AUTO,
@@ -19,7 +20,7 @@ const config = {
       debug: true,
     },
   },
-  scene: [BootScene],
+  scene: [BootScene, GameScene], // Add GameScene to the scene array
 };
 
 const usePhaser = () => {
